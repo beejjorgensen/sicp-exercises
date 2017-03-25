@@ -1,0 +1,10 @@
+(define (smallest-divisor n)
+  (define (sd-loop x)
+    (cond ((> (* x x) n) n)
+          ((= (remainder n x) 0) x)
+          (else (sd-loop (+ x 1)))))
+  (sd-loop 2))
+
+(display (smallest-divisor 199)) (newline)
+(display (smallest-divisor 1999)) (newline)
+(display (smallest-divisor 19999)) (newline)
